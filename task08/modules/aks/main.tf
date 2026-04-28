@@ -11,7 +11,7 @@ resource "azurerm_kubernetes_cluster" "this" {
     node_count                  = var.default_node_pool_count
     vm_size                     = var.default_node_pool_vm_size
     os_disk_type                = var.default_node_pool_os_disk_type
-    temporary_name_for_rotation = "rotpool"
+    temporary_name_for_rotation = "temppool"
     tags                        = var.tags
   }
 
@@ -26,10 +26,6 @@ resource "azurerm_kubernetes_cluster" "this" {
   network_profile {
     network_plugin    = "kubenet"
     load_balancer_sku = "standard"
-  }
-
-  node_provisioning_profile {
-    mode = "Manual"
   }
 
   role_based_access_control_enabled = true

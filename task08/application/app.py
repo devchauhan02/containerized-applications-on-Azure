@@ -3,7 +3,6 @@ from redis import Redis, RedisError
 import os
 import socket
 
-# Connect to Redis
 redis = Redis(host=os.getenv("REDIS_URL","localhost"),
 port=os.getenv("REDIS_PORT","6379"), db=0, password=os.getenv("REDIS_PWD",""),
 ssl=os.getenv("REDIS_SSL_MODE","true"))
