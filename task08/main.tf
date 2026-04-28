@@ -145,7 +145,7 @@ resource "kubectl_manifest" "deployment" {
     }
   }
 
-  depends_on = [kubectl_manifest.secret_provider_class, time_sleep.wait_for_image_build]
+  depends_on = [kubectl_manifest.secret_provider_class, module.acr]
 }
 
 resource "kubectl_manifest" "service" {

@@ -8,21 +8,25 @@ terraform {
     }
     kubernetes = {
       source  = "hashicorp/kubernetes"
-      version = "~> 2.38"
+      version = "~> 2.27"
     }
     kubectl = {
       source  = "alekc/kubectl"
-      version = "~> 2.2"
-    }
-    time = {
-      source  = "hashicorp/time"
-      version = "~> 0.13"
+      version = "~> 2.0"
     }
   }
 }
 
 provider "azurerm" {
-  features {}
+  features {
+    key_vault {
+      purge_soft_delete_on_destroy    = true
+      recover_soft_deleted_key_vaults = true
+    }
+    resource_group {
+      prevent_deletion_if_contains_resources = false
+    }
+  }
 }
 
 provider "kubernetes" {
