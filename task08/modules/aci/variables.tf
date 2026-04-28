@@ -1,52 +1,64 @@
 variable "name" {
-  type = string
+  description = "Name of the Azure Container Instance"
+  type        = string
 }
 
 variable "location" {
-  type = string
+  description = "Azure region for the Container Instance"
+  type        = string
 }
 
 variable "resource_group_name" {
-  type = string
+  description = "Name of the resource group to deploy Container Instance into"
+  type        = string
 }
 
 variable "sku" {
-  type = string
+  description = "SKU for the Container Instance (Standard or Dedicated)"
+  type        = string
 }
 
 variable "dns_name_label" {
-  type = string
+  description = "DNS name label for the Container Instance public IP"
+  type        = string
 }
 
 variable "image" {
-  type = string
+  description = "Full container image name including registry and tag"
+  type        = string
 }
 
 variable "registry_server" {
-  type = string
+  description = "Container registry server URL"
+  type        = string
 }
 
 variable "registry_username" {
-  type = string
+  description = "Username for container registry authentication"
+  type        = string
 }
 
 variable "registry_password" {
-  type      = string
-  sensitive = true
+  description = "Password for container registry authentication"
+  type        = string
+  sensitive   = true
 }
 
 variable "environment_variables" {
-  type    = map(string)
-  default = {}
+  description = "Environment variables to set in the container"
+  type        = map(string)
+  default     = {}
 }
 
 variable "secure_environment_variables" {
-  type      = map(string)
-  default   = {}
-  sensitive = true
+  description = "Secure environment variables to set in the container"
+  type        = map(string)
+  default     = {}
+  sensitive   = true
 }
 
 variable "tags" {
-  type    = map(string)
-  default = {}
+  description = "Tags to apply to the Container Instance resource"
+  type        = map(string)
+  default     = {}
 }

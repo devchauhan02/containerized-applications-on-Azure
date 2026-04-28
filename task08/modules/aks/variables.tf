@@ -1,53 +1,66 @@
 variable "name" {
-  type = string
+  description = "Name of the Azure Kubernetes Service cluster"
+  type        = string
 }
 
 variable "location" {
-  type = string
+  description = "Azure region for the AKS cluster"
+  type        = string
 }
 
 variable "resource_group_name" {
-  type = string
+  description = "Name of the resource group to deploy AKS into"
+  type        = string
 }
 
 variable "dns_prefix" {
-  type = string
+  description = "DNS prefix for the AKS cluster"
+  type        = string
 }
 
 variable "kubernetes_version" {
-  type    = string
-  default = null
+  description = "Kubernetes version for the AKS cluster"
+  type        = string
+  default     = null
 }
 
 variable "default_node_pool_name" {
-  type = string
+  description = "Name of the default node pool"
+  type        = string
 }
 
 variable "default_node_pool_count" {
-  type = number
+  description = "Number of nodes in the default node pool"
+  type        = number
 }
 
 variable "default_node_pool_vm_size" {
-  type = string
+  description = "VM size for the default node pool nodes"
+  type        = string
 }
 
 variable "default_node_pool_os_disk_type" {
-  type = string
+  description = "OS disk type for the default node pool (Managed or Ephemeral)"
+  type        = string
 }
 
 variable "acr_id" {
-  type = string
+  description = "Resource ID of the Azure Container Registry for AcrPull role assignment"
+  type        = string
 }
 
 variable "key_vault_id" {
-  type = string
+  description = "Resource ID of the Key Vault for secrets provider access"
+  type        = string
 }
 
 variable "tenant_id" {
-  type = string
+  description = "Azure AD tenant ID for Key Vault access policy"
+  type        = string
 }
 
 variable "tags" {
-  type    = map(string)
-  default = {}
+  description = "Tags to apply to the AKS cluster resources"
+  type        = map(string)
+  default     = {}
 }
