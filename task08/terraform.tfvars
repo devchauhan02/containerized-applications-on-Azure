@@ -4,7 +4,7 @@ name_prefix = "cmtr-49e4rswo-mod8"
 
 student_email = "devashish_chauhan@epam.com"
 
-repository_url    = "https://github.com/devchauhan02/github.com/devchauhan02/containerized-applications-on-Azure.git"
+repository_url    = "https://github.com/devchauhan02/containerized-applications-on-Azure.git"
 repository_branch = "main"
 repository_type   = "Github"
 
