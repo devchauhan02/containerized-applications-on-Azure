@@ -33,19 +33,6 @@ resource "azurerm_container_registry_task" "this" {
       login_mode = "Default"
     }
   }
-
-  source_trigger {
-    name           = "commit-trigger"
-    events         = ["commit"]
-    repository_url = var.repository_url
-    source_type    = var.repository_type
-    branch         = var.repository_branch
-
-    authentication {
-      token      = var.context_access_token
-      token_type = "PAT"
-    }
-  }
 }
 
 resource "azurerm_container_registry_task_schedule_run_now" "this" {
